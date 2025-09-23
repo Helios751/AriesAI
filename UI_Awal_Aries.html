@@ -226,6 +226,22 @@
     document.getElementById("btnMapelLain").addEventListener("click", function () {
       window.location.href = "mapel_lain.html";
     })
+    
+  window.onload = () => {
+    fetch("http://127.0.0.1:5000/ask", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ question: "Hello, API!" })
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log("Response dari API:", data);
+      document.body.innerHTML += `<p>${data.answer}</p>`;
+    })
+    .catch(err => console.error("Error:", err));
+  };
   </script>
 
 </body>
