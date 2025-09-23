@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARIES UI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      font-family: "Pixelify Sans", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .delay-1 {
+      animation-delay: 0.5s;
+    }
+
+    .delay-2 {
+      animation-delay: 1s;
+    }
+
+    .delay-3 {
+      animation-delay: 1.5s;
+    }
+
+    .delay-4 {
+      animation-delay: 2s;
+    }
+
+    .border-mnl {
+      border: white solid 2.75px;
+    }
+
+    @keyframes twinkle {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.3;
+      }
+    }
+
+    .star {
+      position: absolute;
+      background: white;
+      /* hilangkan border-radius supaya pixel */
+      border-radius: 0;
+      animation: twinkle 135s infinite steps(2, jump-none);
+      image-rendering: pixelated;
+      /* pastikan kesan pixel */
+    }
+
+    /* Gradient custom */
+    .btn-gradient {
+      background: linear-gradient(to bottom, #1b0476, #1f4287, #5e29ab);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /*Bintang pixel dalam button */
+    /* .btn-star {
+      position: absolute;
+      background: white;
+      border-radius: 0;
+      animation: twinkle 6.11111111s infinite steps(2, jump-none);
+      opacity: 0.8;
+      z-index: -1;
+      image-rendering: pixelated;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    } */
+    
+    /* Hover di desktop → bintang muncul */
+    /* .btn-gradient:hover .btn-star {
+      opacity: 0.8;
+      animation: twinkle 3s infinite steps(2, jump-none);
+      transition: opacity 0.3s ease-in-out;
+    } */
+
+    /* Mobile (≤768px) → bintang langsung tampil & animasi
+    @media (mix-width: 768px) {
+      .btn-star {
+        opacity: 0.8 !important;
+        animation: twinkle 3s infinite steps(2, jump-none) !important;
+      }
+    }
+
+    /* Animasi kelap-kelip */
+    @keyframes twinkle {
+
+      0%,
+      100% {
+        opacity: 0.2;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(0.6138);
+      }
+    }
+  </style>
+</head>
+
+<body
+  class="flex items-center justify-center h-screen bg-gradient-to-b from-indigo-900 to-purple-800 relative overflow-hidden">
+
+
+  <div id="stars"></div>
+
+
+  <div class="flex flex-col items-center text-center px-4">
+
+    <div id="logo" class="w-32 h-32 md:w-40 md:h-40 mb-6 animate__animated animate__zoomIn">
+      <img src="./images/logo_ARIES.png" alt="Logo Aries" class="w-full h-full object-contain drop-shadow-lg">
+    </div>
+
+
+    <p id="greeting" class="text-white text-lg md:text-2xl font-medium animate-pulse">
+
+    </p>
+
+    <div id="cardContainer" class="hidden flex flex-col items-center gap-3 mt-5">
+      <button id="btn-Eko"
+        class="border-mnl w-full max-w-[390px] btn-gradient text-white px-6 py-3 shadow-md hover:scale-105 transition rounded-md">
+        Ekonomi →
+      </button>
+      <button id="btn-Geo"
+        class="border-mnl w-full max-w-[390px] btn-gradient text-white px-6 py-3 shadow-md hover:scale-105 transition rounded-md">
+        Geografi →
+      </button>
+      <button id="btn-sjrh"
+        class="border-mnl w-full max-w-[390px] btn-gradient text-white px-6 py-3 shadow-md hover:scale-105 transition rounded-md">
+        Sejarah →
+      </button>
+       <button id="btn-sos"
+        class="border-mnl w-full max-w-[390px] btn-gradient text-white px-6 py-3 shadow-md hover:scale-105 transition rounded-md">
+        Sosiologi →
+      </button>
+      <button  id="btnBack"
+        class="border-mnl w-full max-w-[390px] btn-gradient text-white px-6 py-3 shadow-md hover:scale-105 transition rounded-md">
+         ← Kembali ke halaman utama 
+      </button>
+     
+    </div>
+  </div>
+
+  <script>
+
+    const starsContainer = document.getElementById("stars");
+    const starCount = 200;
+
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement("div");
+      star.classList.add("star");
+
+
+      const size = Math.floor(Math.random() * 3) + 1;
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+
+
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+
+
+      star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+
+      starsContainer.appendChild(star);
+    }
+
+    const greetingElement = document.getElementById("greeting");
+    const hour = new Date().getHours();
+    let greeting = "Halo!";
+
+    if (hour >= 5 && hour < 11) {
+      greeting = "Selamat Pagi!";
+    } else if (hour >= 11 && hour < 15) {
+      greeting = "Selamat Siang!";
+    } else if (hour >= 15 && hour < 18) {
+      greeting = "Selamat Sore!";
+    } else {
+      greeting = "Selamat Malam!";
+    }
+
+    greetingElement.textContent = `${greeting} Adakah yang bisa saya bantu?`;
+
+    document.getElementById("logo").classList.add("fade-up");
+    greetingElement.classList.add("fade-up");
+
+
+    const card = document.getElementById("cardContainer");
+    card.classList.add("fade-up");
+    card.classList.remove("hidden");
+    card.classList.add("slide-up");
+
+    document.querySelectorAll(".btn-gradient").forEach(btn => {
+      const isMobile = window.innerWidth <= 768;
+      const starCount = isMobile ? 25 : 15; // mobile lebih ramai
+
+      for (let i = 0; i < starCount; i++) {
+        let star = document.createElement("span");
+        star.classList.add("btn-star");
+
+        // posisi acak
+        star.style.top = Math.random() * 100 + "%";
+        star.style.left = Math.random() * 100 + "%";
+
+        // ukuran pixel random
+        let size = Math.floor(Math.random() * 3) + 2; // 2px - 4px
+        star.style.width = size + "px";
+        star.style.height = size + "px";
+
+        // delay animasi acak
+        star.style.animationDelay = (Math.random() * 3) + "s";
+
+        btn.appendChild(star);
+      }
+    });
+
+    document.getElementById("btnBack").addEventListener("click", () => {
+    window.location.href = "UI_Awal_Aries.html";
+  });
+
+  </script>
+
+</body>
+
+</html>

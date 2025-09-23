@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="response"></div>
+    <form id="askForm">
+        <textarea name="message" id="message"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("askForm").addEventListener("submit", async function (e) {
+            e.preventDefault(); 
+
+            const userMessage = document.getElementById("message").value;
+
+            try {
+                const res = await fetch("http://127.0.0.1:5000/ask", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ question: userMessage })
+                });
+
+                const data = await res.json();
+
+                document.getElementById("response").innerHTML = `
+          <p><strong>Category:</strong> ${data.category}</p>
+          <p><strong>Answer:</strong> ${data.answer}</p>
+        `;
+            } catch (err) {
+                document.getElementById("response").innerHTML = `<p style="color:red;">Error: ${err}</p>`;
+            }
+        });
+    </script>
+</body>
+
+</html>
