@@ -82,36 +82,6 @@
             position: relative;
             overflow: hidden;
         }
-
-        /*Bintang pixel dalam button */
-        /* .btn-star {
-      position: absolute;
-      background: white;
-      border-radius: 0;
-      animation: twinkle 6.11111111s infinite steps(2, jump-none);
-      opacity: 0.8;
-      z-index: -1;
-      image-rendering: pixelated;
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out;
-    } */
-
-        /* Hover di desktop → bintang muncul */
-        /* .btn-gradient:hover .btn-star {
-      opacity: 0.8;
-      animation: twinkle 3s infinite steps(2, jump-none);
-      transition: opacity 0.3s ease-in-out;
-    } */
-
-        /* Mobile (≤768px) → bintang langsung tampil & animasi
-    @media (mix-width: 768px) {
-      .btn-star {
-        opacity: 0.8 !important;
-        animation: twinkle 3s infinite steps(2, jump-none) !important;
-      }
-    }
-
-    /* Animasi kelap-kelip */
         @keyframes twinkle {
 
             0%,
@@ -250,6 +220,19 @@
         document.getElementById("Lainnya").addEventListener("click", () => {
             window.location.href = "mapel_lain_lanjutan.html";
         });
+
+        document.getElementById("btn-PPS").addEventListener("click", () => {
+             window.location.href = "chat.html?category=Pendidikan Pancasila";
+          });
+          document.getElementById("btn-PJOK").addEventListener("click", () => {
+            window.location.href = "chat.html?category=Pendidikan Jasmani";
+          });
+
+          document.getElementById("Matik").addEventListener("click", () => {
+    window.location.href = "chat.html?category=MAtematika";
+  });
+
+        
     </script>
 
 </body>

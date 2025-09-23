@@ -16,9 +16,10 @@
 
     <script>
         document.getElementById("askForm").addEventListener("submit", async function (e) {
-            e.preventDefault(); 
+            e.preventDefault(); // biar form tidak reload
 
             const userMessage = document.getElementById("message").value;
+            console.log(userMessage)
 
             try {
                 const res = await fetch("http://127.0.0.1:5000/ask", {
@@ -30,6 +31,7 @@
                 });
 
                 const data = await res.json();
+                console.log(data)
 
                 document.getElementById("response").innerHTML = `
           <p><strong>Category:</strong> ${data.category}</p>

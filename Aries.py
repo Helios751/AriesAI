@@ -6,7 +6,7 @@ client = genai.Client(
 
 response = client.models.generate_content(
     model="gemini-2.5-flash",
-    contents="berikan saya sinergi bagus di mcgg dan berikan penjelasan detail terhadap semua sinergi beserta hero dan commander di mc gg di late mid dan early game agar optimal mendapatkan peringkat 1 dengan kombinasi hero komander dan sinergi terbaik di mcgg 2025",
+    contents="bagaimana konsep ai",
 )
 
 print(response.text)

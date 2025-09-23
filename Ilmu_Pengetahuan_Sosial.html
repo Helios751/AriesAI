@@ -83,35 +83,6 @@
       overflow: hidden;
     }
 
-    /*Bintang pixel dalam button */
-    /* .btn-star {
-      position: absolute;
-      background: white;
-      border-radius: 0;
-      animation: twinkle 6.11111111s infinite steps(2, jump-none);
-      opacity: 0.8;
-      z-index: -1;
-      image-rendering: pixelated;
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out;
-    } */
-    
-    /* Hover di desktop → bintang muncul */
-    /* .btn-gradient:hover .btn-star {
-      opacity: 0.8;
-      animation: twinkle 3s infinite steps(2, jump-none);
-      transition: opacity 0.3s ease-in-out;
-    } */
-
-    /* Mobile (≤768px) → bintang langsung tampil & animasi
-    @media (mix-width: 768px) {
-      .btn-star {
-        opacity: 0.8 !important;
-        animation: twinkle 3s infinite steps(2, jump-none) !important;
-      }
-    }
-
-    /* Animasi kelap-kelip */
     @keyframes twinkle {
 
       0%,
@@ -155,19 +126,19 @@
         class="border-mnl w-full max-w-[390px] btn-gradient text-white px-6 py-3 shadow-md hover:scale-105 transition rounded-md">
         Geografi →
       </button>
-      <button id="btn-sjrh"
+      <button id="sjrh"
         class="border-mnl w-full max-w-[390px] btn-gradient text-white px-6 py-3 shadow-md hover:scale-105 transition rounded-md">
         Sejarah →
       </button>
-       <button id="btn-sos"
+      <button id="sos"
         class="border-mnl w-full max-w-[390px] btn-gradient text-white px-6 py-3 shadow-md hover:scale-105 transition rounded-md">
         Sosiologi →
       </button>
-      <button  id="btnBack"
+      <button id="btnBack"
         class="border-mnl w-full max-w-[390px] btn-gradient text-white px-6 py-3 shadow-md hover:scale-105 transition rounded-md">
-         ← Kembali ke halaman utama 
+        ← Kembali ke halaman utama
       </button>
-     
+
     </div>
   </div>
 
@@ -245,8 +216,25 @@
     });
 
     document.getElementById("btnBack").addEventListener("click", () => {
-    window.location.href = "UI_Awal_Aries.html";
-  });
+      window.location.href = "UI_Awal_Aries.html";
+    });
+
+    document.getElementById("btn-Eko").addEventListener("click", () => {
+      window.location.href = "chat.html?category=Ekonomi";
+    });
+
+    document.getElementById("btn-Geo").addEventListener("click", () => {
+      window.location.href = "chat.html?category=Fisika";
+    });
+
+    document.getElementById("sjrh").addEventListener("click", () => {
+      window.location.href = "chat.html?category=Sejarah";
+    });
+
+    document.getElementById("sos").addEventListener("click", () => {
+      window.location.href = "chat.html?category=Sosiologi";
+    });
+
 
   </script>
 

@@ -9,11 +9,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
 
   <style>
     * {
-      font-family: "Pixelify Sans", sans-serif;
+      font-family: "Ubuntu", sans-serif;
       font-optical-sizing: auto;
       font-style: normal;
     }
@@ -73,7 +74,6 @@
       border-radius: 0;
       animation: twinkle 135s infinite steps(2, jump-none);
       image-rendering: pixelated;
-      /* pastikan kesan pixel */
     }
 
     /* Gradient custom */
@@ -83,35 +83,7 @@
       overflow: hidden;
     }
 
-    /*Bintang pixel dalam button */
-    /* .btn-star {
-      position: absolute;
-      background: white;
-      border-radius: 0;
-      animation: twinkle 6.11111111s infinite steps(2, jump-none);
-      opacity: 0.8;
-      z-index: -1;
-      image-rendering: pixelated;
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out;
-    } */
-    
-    /* Hover di desktop → bintang muncul */
-    /* .btn-gradient:hover .btn-star {
-      opacity: 0.8;
-      animation: twinkle 3s infinite steps(2, jump-none);
-      transition: opacity 0.3s ease-in-out;
-    } */
 
-    /* Mobile (≤768px) → bintang langsung tampil & animasi
-    @media (mix-width: 768px) {
-      .btn-star {
-        opacity: 0.8 !important;
-        animation: twinkle 3s infinite steps(2, jump-none) !important;
-      }
-    }
-
-    /* Animasi kelap-kelip */
     @keyframes twinkle {
 
       0%,
@@ -122,14 +94,14 @@
 
       50% {
         opacity: 1;
-        transform: scale(0.618);
+        transform: scale(0.6138);
       }
     }
   </style>
 </head>
 
 <body
-  class="flex items-center justify-center h-screen bg-gradient-to-b from-indigo-900 to-purple-800 relative overflow-hidden">
+  class="flex items-center justify-center h-screen bg-gradient-to-b from-black via-indigo-900 to-purple-700 relative overflow-hidden">
 
 
   <div id="stars"></div>
@@ -240,21 +212,21 @@
     });
 
     document.getElementById("btnIPA").addEventListener("click", () => {
-    window.location.href = "Ilmu_Pengetahuan_Alam.html";
-  });
+      window.location.href = "Ilmu_Pengetahuan_Alam.html";
+    });
 
-  
+
     document.getElementById("btnIPS").addEventListener("click", () => {
-    window.location.href = "Ilmu_Pengetahuan_Sosial.html";
-  });
+      window.location.href = "Ilmu_Pengetahuan_Sosial.html";
+    });
 
-  document.getElementById("btnBHS").addEventListener("click", () => {
-    window.location.href = "Bahasa.html";
-  });
+    document.getElementById("btnBHS").addEventListener("click", () => {
+      window.location.href = "Bahasa.html";
+    });
 
-  document.getElementById("btnMapelLain").addEventListener("click", function () {
-    window.location.href = "mapel_lain.html";
-  })
+    document.getElementById("btnMapelLain").addEventListener("click", function () {
+      window.location.href = "mapel_lain.html";
+    })
   </script>
 
 </body>

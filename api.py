@@ -1,16 +1,20 @@
 from flask import Flask, request, jsonify
 from google import genai
+from flask_cors import CORS
+
 
 # Inisialisasi Gemini Client
 client = genai.Client(api_key="AIzaSyBsCPI710WmC5Fxq9UrPa_yMh159kam_2Y")
 
 # Inisialisasi Flask
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/ask", methods=["POST"])
 def ask():
     data = request.get_json()
     user_input = data.get("question", "")
+    category=data.get("category","")
 
     if not user_input:
         return jsonify({"error": "Pertanyaan tidak boleh kosong"}), 400
@@ -21,8 +25,10 @@ def ask():
         contents=f"""
         Pertanyaan: "{user_input}"
         
-        Tentukan apakah pertanyaan ini terkait dengan pembelajaran (matematika, IPA, IPS, Sejarah, bahasa).
+        Tentukan apakah pertanyaan ini terkait dengan mata pelajaran "{category}".
         Jawab hanya dengan 'pembelajaran' atau 'luar'.
+        Jawablah pertanyaan berikut menggunakan simbol matematika Unicode, 
+    bukan LaTeX.
         """
     )
 
@@ -35,7 +41,7 @@ def ask():
         )
         message = response.text
     else:
-        message = "Pertanyaan Anda di luar materi pembelajaran."
+        message = "Pertanyaan Anda di luar mata pelajaran " + category + "."
 
     return jsonify({
         "question": user_input,
