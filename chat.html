@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ARIES Chat UI</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 
 <body class="h-screen flex flex-col bg-gradient-to-b from-blue-900 to-purple-900">
@@ -120,7 +122,7 @@
       addTypingBubble();
 
       try {
-        const res = await fetch("http://127.0.0.1:5000/ask", {
+        const res = await fetch("http://127.0.0.1:5500/ask", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -190,7 +192,6 @@
       recognition.start();
     });
   </script>
-<py-script src="./api.py"></py-script>
 </body>
 
 </html>

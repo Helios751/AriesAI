@@ -223,8 +223,25 @@
     window.location.href = "chat.html?category=Fisika";
   });
 
+  fetch("http://127.0.0.1:5500/ask", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    question: userMessage,
+    category: category
+  })
+})
+.then(res => res.json())
+.then(data => {
+  console.log("Respon API:", data);
+})
+.catch(err => {
+  console.error("Error koneksi:", err);
+});
   </script>
-
+<py-script src="/api.py"></py-script>
 </body>
 
 </html>

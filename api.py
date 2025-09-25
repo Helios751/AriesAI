@@ -2,7 +2,6 @@ from flask import Flask, request, jsonify
 from google import genai
 from flask_cors import CORS
 
-
 # Inisialisasi Gemini Client
 client = genai.Client(api_key="AIzaSyBsCPI710WmC5Fxq9UrPa_yMh159kam_2Y")
 
