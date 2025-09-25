@@ -68,7 +68,7 @@ window.location.href = "chat.html?category=Bahasa Bali";
 
 //Next Page and Before Page
 let currentCard = 1;
-document.getElementById(btnNext).addEventListener("click", () => {
+document.getElementById("btnNext").addEventListener("click", () => {
     currentCard++;
     if (currentCard > 4) {
         currentCard = 1;
@@ -76,7 +76,7 @@ document.getElementById(btnNext).addEventListener("click", () => {
     updateCardDisplay();
 });
 
-document.getElementById(btnBfr).addEventListener("click", () => {
+document.getElementById("btnBfr").addEventListener("click", () => {
     currentCard--;
     if (currentCard < 1) {
         currentCard = 4;
@@ -88,12 +88,14 @@ function updateCardDisplay() {
     for (let i = 1; i <= 4; i++) {
         const card = document.getElementById(`cardContainer${i}`);
         if (card) {
-            card.style.display = 'none';
+            card.classList.add('hidden');
+            card.classList.remove('flex-col');
         }
     }
     const activeCard = document.getElementById(`cardContainer${currentCard}`);
     if (activeCard) {
-        activeCard.style.display = 'flex';
+        activeCard.classList.remove('hidden');
+        activeCard.classList.add('flex-col');
     }
 }
 
