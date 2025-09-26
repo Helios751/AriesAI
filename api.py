@@ -9,7 +9,7 @@ client = genai.Client(api_key="AIzaSyBsCPI710WmC5Fxq9UrPa_yMh159kam_2Y")
 app = Flask(__name__)
 CORS(app)
 
-@app.route("/ask", methods=["GET"])
+@app.route("/", methods=["GET"])
 def home():
     return "API is running"
 @app.route("/ask", methods=["POST"])
