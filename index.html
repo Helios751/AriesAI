@@ -102,83 +102,83 @@
   </style>
 </head>
 
-<body
-  class="items-center justify-center h-screen bg-gradient-to-b from-black via-indigo-900 to-purple-700">
+<body class="items-center justify-center h-screen bg-gradient-to-b from-black via-indigo-900 to-purple-700">
 
 
   <div id="stars"></div>
 
+  <div>
+    <div class="flex flex-col items-center text-center px-4">
 
-  <div class="flex flex-col items-center text-center px-4">
+      <div id="logo" class="w-20 h-20 mb-6 mt-10 animate__animated animate__zoomIn">
+        <img src="./images/logo_ARIES.png" alt="Logo Aries" class="w-full h-full object-contain drop-shadow-lg">
+      </div>
 
-    <div id="logo" class="w-20 h-20 mb-6 mt-10 animate__animated animate__zoomIn">
-      <img src="./images/logo_ARIES.png" alt="Logo Aries" class="w-full h-full object-contain drop-shadow-lg">
+
+      <p id="greeting" class="text-white text-lg md:text-2xl font-medium animate-pulse">
+
+      </p>
+      <div id="cardContainer1" class="grid grid-cols-1 gap-4 mt-5">
+        <button id="btn-Kma"
+          class="rounded-lg border-2 border-mnl transition transform hover:scale-105 hover:shadow-lg">
+          <img src="./svgs/Kimia.svg" alt="Kimia" class="w-full max-h-[20vh] mx-auto">
+        </button>
+        <button id="btn-fis"
+          class="rounded-lg border-2 border-mnl transition transform hover:scale-105 hover:shadow-lg">
+          <img src="./svgs/Fisika.svg" alt="Fisika" class="w-full max-h-[20vh] mx-auto">
+        </button>
+        <button id="btn-Bio"
+          class="rounded-lg border-2 border-mnl transition transform hover:scale-105 hover:shadow-lg">
+          <img src="./svgs/Biologi.svg" alt="Biologi" class="w-full max-h-[20vh] mx-auto">
+        </button>
+        <button id="btn-Informatika"
+          class="rounded-lg border-2 border-mnl transition transform hover:scale-105 hover:shadow-lg">
+          <img src="./svgs/Informatika.svg" alt="Informatika" class="w-full max-h-[20vh] mx-auto">
+        </button>
+      </div>
+
+      <div id="cardContainer2" class="hidden grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-5">
+        <img id="btn-Eko" src="./svgs/Kimia.svg"
+          class="w-full max-h-[12vh] object-contain hover:cursor-pointer hover:scale-105 transition-transform duration-200 rounded-md border-mnl border-2">
+        <img id="btn-Sos" src="./svgs/Fisika.svg"
+          class="w-full max-h-[12vh] object-contain hover:cursor-pointer hover:scale-105 transition-transform duration-200 rounded-md border-mnl border-2">
+        <img id="btn-Geo" src="./svgs/Biologi.svg"
+          class="w-full max-h-[12vh] object-contain hover:cursor-pointer hover:scale-105 transition-transform duration-200 rounded-md border-mnl border-2">
+        <img id="btn-Sjrh" src="./svgs/Informatika.svg"
+          class="w-full max-h-[12vh] object-contain hover:cursor-pointer hover:scale-105 transition-transform duration-200 rounded-md border-mnl border-2">
+      </div>
+
+      <div id="cardContainer3" class="hidden grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-5">
+        <img id="btn-Ind" src="./svgs/Kimia.svg"
+          class="w-full max-h-[12vh] object-contain hover:cursor-pointer hover:scale-105 transition-transform duration-200 rounded-md border-mnl border-2">
+        <img id="btn-ing" src="./svgs/Fisika.svg"
+          class="w-full max-h-[12vh] object-contain hover:cursor-pointer hover:scale-105 transition-transform duration-200 rounded-md border-mnl border-2">
+        <img id="btn-jpn" src="./svgs/Biologi.svg"
+          class="w-full max-h-[12vh] object-contain hover:cursor-pointer hover:scale-105 transition-transform duration-200 rounded-md border-mnl border-2">
+        <img id="btn-Bl" src="./svgs/Informatika.svg"
+          class="w-full max-h-[12vh] object-contain hover:cursor-pointer hover:scale-105 transition-transform duration-200 rounded-md border-mnl border-2">
+      </div>
+
+      <div id="cardContainer4" class="hidden grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-5">
+        <img id="btn-MTK" src="./svgs/Kimia.svg"
+          class="w-full max-h-[12vh] object-contain hover:cursor-pointer hover:scale-105 transition-transform duration-200 rounded-md border-mnl border-2">
+        <img id="btn-PJOK" src="./svgs/Fisika.svg"
+          class="w-full max-h-[12vh] object-contain hover:cursor-pointer hover:scale-105 transition-transform duration-200 rounded-md border-mnl border-2">
+        <img id="btn-Tari" src="./svgs/Biologi.svg"
+          class="w-full max-h-[12vh] object-contain hover:cursor-pointer hover:scale-105 transition-transform duration-200 rounded-md border-mnl border-2">
+        <img id="btn-PPS" src="./svgs/Informatika.svg"
+          class="w-full max-h-[12vh] object-contain hover:cursor-pointer hover:scale-105 transition-transform duration-200 rounded-md border-mnl border-2">
+      </div>
+
+
     </div>
 
-
-    <p id="greeting" class="text-white text-lg md:text-2xl font-medium animate-pulse">
-
-    </p>
-    <div id="cardContainer1" class="grid grid-cols-1 gap-4 mt-5">
-      <button id="btn-Kma"
-        class="rounded-lg border-2 border-mnl transition transform hover:scale-105 hover:shadow-lg">
-        <img src="./svgs/Kimia.svg" alt="Kimia" class="w-full max-h-[20vh] mx-auto">
-      </button>
-      <button id="btn-fis"
-        class="rounded-lg border-2 border-mnl transition transform hover:scale-105 hover:shadow-lg">
-        <img src="./svgs/Fisika.svg" alt="Fisika" class="w-full max-h-[20vh] mx-auto">
-      </button>
-      <button id="btn-Bio"
-        class="rounded-lg border-2 border-mnl transition transform hover:scale-105 hover:shadow-lg">
-        <img src="./svgs/Biologi.svg" alt="Biologi" class="w-full max-h-[20vh] mx-auto">
-      </button>
-      <button id="btn-Informatika"
-        class="rounded-lg border-2 border-mnl transition transform hover:scale-105 hover:shadow-lg">
-        <img src="./svgs/Informatika.svg" alt="Informatika" class="w-full max-h-[20vh] mx-auto">
-      </button>
+    <div id="ActionButton" class="flex">
+      <img id="btnBfr" src="./svgs/BtnBfr.svg"
+        class="fkex-col origin-bottom-left max-w-[40vh] max-h-[5vh] mx-auto mt-8  hover:cursor-pointer">
+      <img id="btnNext" src="./svgs/BtnNext.svg"
+        class="flex-col origin-bottom-right max-w-[40vh] max-h-[5vh] mx-auto mt-8  hover:cursor-pointer">
     </div>
-
-    <div id="cardContainer2" class="hidden grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-5">
-      <img id="btn-Eko" src="./svgs/Kimia.svg"
-        class="w-full max-h-[12vh] object-contain hover:cursor-pointer hover:scale-105 transition-transform duration-200 rounded-md border-mnl border-2">
-      <img id="btn-Sos" src="./svgs/Fisika.svg"
-        class="w-full max-h-[12vh] object-contain hover:cursor-pointer hover:scale-105 transition-transform duration-200 rounded-md border-mnl border-2">
-      <img id="btn-Geo" src="./svgs/Biologi.svg"
-        class="w-full max-h-[12vh] object-contain hover:cursor-pointer hover:scale-105 transition-transform duration-200 rounded-md border-mnl border-2">
-      <img id="btn-Sjrh" src="./svgs/Informatika.svg"
-        class="w-full max-h-[12vh] object-contain hover:cursor-pointer hover:scale-105 transition-transform duration-200 rounded-md border-mnl border-2">
-    </div>
-
-    <div id="cardContainer3" class="hidden grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-5">
-      <img id="btn-Ind" src="./svgs/Kimia.svg"
-        class="w-full max-h-[12vh] object-contain hover:cursor-pointer hover:scale-105 transition-transform duration-200 rounded-md border-mnl border-2">
-      <img id="btn-ing" src="./svgs/Fisika.svg"
-        class="w-full max-h-[12vh] object-contain hover:cursor-pointer hover:scale-105 transition-transform duration-200 rounded-md border-mnl border-2">
-      <img id="btn-jpn" src="./svgs/Biologi.svg"
-        class="w-full max-h-[12vh] object-contain hover:cursor-pointer hover:scale-105 transition-transform duration-200 rounded-md border-mnl border-2">
-      <img id="btn-Bl" src="./svgs/Informatika.svg"
-        class="w-full max-h-[12vh] object-contain hover:cursor-pointer hover:scale-105 transition-transform duration-200 rounded-md border-mnl border-2">
-    </div>
-
-    <div id="cardContainer4" class="hidden grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-5">
-      <img id="btn-MTK" src="./svgs/Kimia.svg"
-        class="w-full max-h-[12vh] object-contain hover:cursor-pointer hover:scale-105 transition-transform duration-200 rounded-md border-mnl border-2">
-      <img id="btn-PJOK" src="./svgs/Fisika.svg"
-        class="w-full max-h-[12vh] object-contain hover:cursor-pointer hover:scale-105 transition-transform duration-200 rounded-md border-mnl border-2">
-      <img id="btn-Tari" src="./svgs/Biologi.svg"
-        class="w-full max-h-[12vh] object-contain hover:cursor-pointer hover:scale-105 transition-transform duration-200 rounded-md border-mnl border-2">
-      <img id="btn-PPS" src="./svgs/Informatika.svg"
-        class="w-full max-h-[12vh] object-contain hover:cursor-pointer hover:scale-105 transition-transform duration-200 rounded-md border-mnl border-2">
-    </div>
-
-
-  </div>
-
-  <div id="ActionButton" class="flex">
-    <img id="btnBfr" src="./svgs/BtnBfr.svg"
-      class="fkex-col origin-bottom-left max-w-[40vh] max-h-[5vh] mx-auto mt-8  hover:cursor-pointer">
-    <img id="btnNext" src="./svgs/BtnNext.svg"
-      class="flex-col origin-bottom-right max-w-[40vh] max-h-[5vh] mx-auto mt-8  hover:cursor-pointer">
   </div>
 
   <script>
