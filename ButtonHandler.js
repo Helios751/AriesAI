@@ -10,10 +10,6 @@ document.getElementById("btn-fis").addEventListener("click", () => {
 window.location.href = "chat.html?category=Fisika";
 });
 
-document.getElementById("btn-Main").addEventListener("click", () => {
-window.location.href = "UI_Awal_Aries.html";
-});
-
 document.getElementById("btn-Eko").addEventListener("click", () => {
 window.location.href = "chat.html?category=Ekonomi";
 });
@@ -34,9 +30,9 @@ document.getElementById("btn-Tari").addEventListener("click", () => {
 window.location.href = "chat.html?category=Seni Tari";
 });
 
-document.getElementById("btn-Informatika").addEventListener("click", () => {
-window.location.href = "chat.html?category=Informatika";
-});
+document.getElementById("btn-Infor").addEventListener("click", () => {
+            window.location.href = "chat.html?category=Informatika";
+        });
 
 document.getElementById("btn-PPS").addEventListener("click", () => {
 window.location.href = "chat.html?category=Pendidikan Pancasila";
@@ -47,7 +43,7 @@ window.location.href = "chat.html?category=Pendidikan Jasmani";
 });
 
 document.getElementById("btn-MTK").addEventListener("click", () => {
-window.location.href = "chat.html?category=MAtematika";
+window.location.href = "chat.html?category=Matematika";
 });
 
 document.getElementById("btn-Ind").addEventListener("click", () => {
@@ -67,36 +63,26 @@ window.location.href = "chat.html?category=Bahasa Bali";
 });
 
 //Next Page and Before Page
-let currentCard = 1;
-document.getElementById("btnNext").addEventListener("click", () => {
-    currentCard++;
-    if (currentCard > 4) {
-        currentCard = 1;
-    }
-    updateCardDisplay();
-});
+let currentIndex = 1; // mulai dari cardContainer1
+  const totalCards = 4; // total cardContainer yang ada
 
-document.getElementById("btnBfr").addEventListener("click", () => {
-    currentCard--;
-    if (currentCard < 1) {
-        currentCard = 4;
+  function showCard(index) {
+    for (let i = 1; i <= totalCards; i++) {
+      document.getElementById("cardContainer" + i).classList.add("hidden");
     }
-    updateCardDisplay();
-});
+    document.getElementById("cardContainer" + index).classList.remove("hidden");
+  }
 
-function updateCardDisplay() {
-    for (let i = 1; i <= 4; i++) {
-        const card = document.getElementById(`cardContainer${i}`);
-        if (card) {
-            card.classList.add('hidden');
-            card.classList.remove('flex-col');
-        }
-    }
-    const activeCard = document.getElementById(`cardContainer${currentCard}`);
-    if (activeCard) {
-        activeCard.classList.remove('hidden');
-        activeCard.classList.add('flex-col');
-    }
-}
+  document.getElementById("nxtbtn").addEventListener("click", () => {
+    currentIndex++;
+    if (currentIndex > totalCards) currentIndex = 1; // balik lagi ke awal
+    showCard(currentIndex);
+  });
 
-updateCardDisplay();
+  document.getElementById("prevbtn").addEventListener("click", () => {
+    currentIndex--;
+    if (currentIndex < 1) currentIndex = totalCards; // ke terakhir
+    showCard(currentIndex);
+  });
+
+showCard(currentIndex); // tampilkan card pertama saat load
