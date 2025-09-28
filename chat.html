@@ -10,41 +10,58 @@
   <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 
-<body class="h-screen flex flex-col bg-gradient-to-b from-blue-900 to-purple-900">
+<body class="h-screen flex flex-col bg-gradient-to-b from-black to-purple-900">
 
   <!-- Chat Container -->
   <div id="chatContainer" class="flex-1 overflow-y-auto p-4 space-y-3 mb-20">
     <!-- Pesan awal bot -->
+    <div class="flex justify-center align-center w-full mb-4">
+      <img src="./images/logo_ARIES.png" class="w-[110px] h-[100px]" alt="logo">
+    </div>
     <div class="flex items-start space-x-2">
-      <img src="./images/logo_ARIES.png" class="w-8 h-8" alt="logo">
-      <div class="bg-purple-700 text-white px-3 py-2 rounded-lg max-w-xs border border-white">
+      <div class="bg-white text-black px-3 py-2 rounded-lg max-w-xs border border-purple-700">
         Apa yang saya bisa bantu terkait dengan mata pelajaran <span id="category-chat"></span>?
       </div>
     </div>
   </div>
 
   <!-- Input Bar (Fixed di bawah) -->
-  <div
-    class="p-3 border-t border-white flex items-center space-x-2 bg-gradient-to-r from-indigo-800 to-purple-700 fixed bottom-0 w-full">
-    <!-- Tombol kiri -->
-    <button class="w-10 h-10 flex items-center justify-center border-2 border-white rounded" id="btn-send-massage">
-      ⬆
-    </button>
-
-    <!-- Input Chat -->
-    <input id="chatInput" type="text" placeholder="Tulis pesan..."
-      class="flex-1 bg-gradient-to-r from-blue-900 to-purple-900 text-white px-3 py-2 border-2 border-white rounded focus:outline-none">
-
-    <!-- Tombol kanan (mic) -->
-    <button class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full" id="btn-mic">
-      
-    </button>
+  <div class="p-6 bg-none border-t border-gray-200 shadow-lg">
+    <div
+      class="flex items-center space-x-4 bg-gray-50 rounded-full px-2 py-2 border-2 border-gray-200 focus-within:border-indigo-500 focus-within:ring-4 focus-within:ring-indigo-100 transition-all duration-300">
+      <input type="text"
+        class="flex-1 bg-transparent px-4 py-3 text-gray-800 placeholder-gray-500 focus:outline-none text-base"
+        id="chatInput" placeholder="Ketik pesan Anda..." autocomplete="off">
+      <div class="flex items-center space-x-2">
+        <!-- <button type="button" onclick="attachFile()"
+          class="w-9 h-9 text-gray-500 hover:text-gray-700 hover:bg-gray-200 rounded-full flex items-center justify-center transition-all duration-300"
+          title="Lampirkan file">
+          📎
+        </button> -->
+        <!-- <button type="button" onclick="addEmoji()"
+          class="w-9 h-9 text-gray-500 hover:text-gray-700 hover:bg-gray-200 rounded-full flex items-center justify-center transition-all duration-300"
+          title="Emoji">
+          😊
+        </button> -->
+        <button type="button" onclick="toggleMicrophone()"
+          class="w-10 h-10 flex items-center justify-center border-2 border-gray-300 hover:border-indigo-500 rounded-full text-gray-500 hover:text-indigo-600 transition-all duration-300 hover:scale-105"
+          id="btn-mic" title="Microphone">
+          🎤
+        </button>
+        <button
+          class="w-11 h-11 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+          id="btn-send-massage" title="Kirim">
+          ➤
+        </button>
+        <!-- <button class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full"
+          id="btn-mic">mic</button> -->
+      </div>
+    </div>
   </div>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
 
   <script>
     const chatContainer = document.getElementById("chatContainer");
@@ -72,7 +89,7 @@
       const msg = document.createElement("div");
       msg.className = "flex justify-end";
       msg.innerHTML = `
-        <div class="bg-indigo-600 text-white px-3 py-2 rounded-lg max-w-xs text-left border border-white">
+        <div class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-3 py-2 rounded-lg max-w-xs text-left border border-white">
           ${text}
         </div>
       `;
@@ -85,8 +102,7 @@
       const msg = document.createElement("div");
       msg.className = "flex items-start space-x-2";
       msg.innerHTML = `
-        <img src="./images/logo_ARIES.png" class="w-8 h-8" alt="logo">
-        <div class="bg-purple-700 text-white px-3 py-2 rounded-lg max-w-xs border border-white">
+        <div class="bg-white text-black px-3 py-2 rounded-lg max-w-xs border border-purple-700">
           ${text}
         </div>
       `;
@@ -99,9 +115,8 @@
       const msg = document.createElement("div");
       msg.className = "flex items-start space-x-2 typing-bubble";
       msg.innerHTML = `
-        <img src="./images/logo_ARIES.png" class="w-8 h-8" alt="logo">
-        <div class="bg-purple-700 text-white px-3 py-2 rounded-lg max-w-xs border border-white animate-pulse">
-          ...
+        <div class="bg-white text-black px-3 py-2 rounded-lg max-w-xs border border-purple-700 animate-pulse">
+          Sedang mengetik ...
         </div>
       `;
       chatContainer.appendChild(msg);
@@ -164,14 +179,24 @@
 
     // Event ketika mulai merekam
     recognition.onstart = () => {
-      micButton.textContent = "🔴"; // ganti icon jadi merah
-      micButton.classList.add("animate-pulse", "bg-red-600");
+      // micButton.textContent = "🔴"; // ganti icon jadi merah
+      // micButton.classList.add("animate-pulse", "bg-red-600");
+      micButton.classList.add('recording');
+      micButton.classList.remove('border-gray-300', 'text-gray-500');
+      micButton.classList.add('bg-red-500', 'border-red-500', 'text-white');
+      micButton.innerHTML = '⏹️';
+      micButton.title = 'Stop Recording';
     };
 
     // Event ketika selesai merekam
     recognition.onend = () => {
-      micButton.textContent = "🎤"; // kembali ke mic
-      micButton.classList.remove("animate-pulse", "bg-red-600");
+      // micButton.textContent = "🎤"; // kembali ke mic
+      // micButton.classList.remove("animate-pulse", "bg-red-600");
+      micButton.classList.remove('recording');
+      micButton.classList.remove('bg-red-500', 'border-red-500', 'text-white');
+      micButton.classList.add('border-gray-300', 'text-gray-500');
+      micButton.innerHTML = '🎤';
+      micButton.title = 'Microphone';
     };
 
     // Event hasil rekaman
@@ -183,14 +208,26 @@
     // Event error
     recognition.onerror = (event) => {
       console.error("Speech recognition error:", event.error);
-      micButton.textContent = "🎤";
-      micButton.classList.remove("animate-pulse", "bg-red-600");
+      // micButton.textContent = "🎤";
+      // micButton.classList.remove("animate-pulse", "bg-red-600");
+      micButton.classList.remove('recording');
+      micButton.classList.remove('bg-red-500', 'border-red-500', 'text-white');
+      micButton.classList.add('border-gray-300', 'text-gray-500');
+      micButton.innerHTML = '🎤';
+      micButton.title = 'Microphone';
     };
 
     // Klik tombol mic untuk mulai rekam
     micButton.addEventListener("click", () => {
       recognition.start();
     });
+
+    function addEmoji() {
+      const emojis = ['😊', '😂', '❤️', '👍', '🎉', '🔥', '💯', '🚀'];
+      const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+      chatInput.value += randomEmoji;
+      chatInput.focus();
+    }
   </script>
 </body>
 
