@@ -30,7 +30,7 @@ def ask():
         Tentukan apakah pertanyaan ini terkait dengan mata pelajaran "{category}".
         Jawab hanya dengan 'pembelajaran' atau 'luar'.
         Jawablah pertanyaan berikut menggunakan simbol matematika Unicode, 
-    bukan LaTeX. Jawab dengan menggunakan bahasa Indonesia.
+    bukan LaTeX. Selain mapel bahasa bali tolong berikan jawaban dengan menggunakan bahasa Indonesia.
         """
     )
 
