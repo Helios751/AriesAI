@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARIES UI</title>
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
+  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    * {
+      font-family: "Ubuntu", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .delay-1 {
+      animation-delay: 0.5s;
+    }
+
+    .delay-2 {
+      animation-delay: 1s;
+    }
+
+    .delay-3 {
+      animation-delay: 1.5s;
+    }
+
+    .delay-4 {
+      animation-delay: 2s;
+    }
+
+    .border-mnl {
+      border: white solid 2.75px;
+    }
+
+    @keyframes twinkle {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.3;
+      }
+    }
+
+    .star {
+      z-index: -100;
+      position: absolute;
+      background: indigo;
+      border-radius: 0;
+      animation: twinkle 135s infinite steps(2, jump-none);
+      image-rendering: pixelated;
+    }
+
+    /* Gradient custom */
+    .btn-gradient {
+      background: linear-gradient(to bottom, #1b0476, #1f4287, #5e29ab);
+      position: relative;
+      overflow: hidden;
+    }
+
+
+    @keyframes twinkle {
+
+      0%,
+      100% {
+        opacity: 0.2;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(0.6138);
+      }
+    }
+  </style>
+</head>
+
+<body
+  class="items-center justify-center h-screen bg-gradient-to-b from-black via-indigo-900 to-purple-700 relative overflow-hidden">
+
+
+  <div id="stars"></div>
+
+
+  <div class="flex flex-col items-center text-center px-4">
+
+    <div id="logo" class="w-20 h-20 mb-6 mt-10 animate__animated animate__zoomIn">
+      <img src="./images/logo_ARIES.png" alt="Logo Aries" class="h-[10vh] w-full object-contain drop-shadow-lg">
+    </div>
+
+
+    <p id="greeting" class="text-white text-lg md:text-2xl font-medium animate-pulse">
+
+    </p>
+    <div id="cardContainer1" class="hidden items-center">
+      <img id="btn-Kma" src="./svgs/Kimia.svg" class="object-fill max-h-[10vh] sm:w-[58vh] my-3 hover:cursor-pointer hover:scale-105 transition-transform duration-100 rounded-md">
+      <img id="btn-fis" src="./svgs/Fisika.svg" class="object-fill max-h-[10vh] sm:w-[58vh] my-3 hover:cursor-pointer hover:scale-105 transition-transform duration-100 rounded-md">
+      <img id="btn-Bio" src="./svgs/Biologi.svg" class="object-fill max-h-[10vh] sm:w-[58vh] my-3 hover:cursor-pointer hover:scale-105 transition-transform duration-100 rounded-md">
+      <img id="btn-Infor" src="./svgs/Informatika.svg" class="object-fill max-h-[10vh] sm:w-[58vh] my-3 hover:cursor-pointer hover:scale-105 transition-transform duration-100 rounded-md">
+    </div>
+    <div id="cardContainer2" class="hidden items-center">
+      <img id="btn-Eko"src="./svgs/Kimia.svg" class="object-fill max-h-[10vh] sm:w-[58vh] my-3 hover:cursor-pointer hover:scale-105 transition-transform duration-100 rounded-md">
+      <img id="btn-Sos" src="./svgs/Fisika.svg" class="object-fill max-h-[10vh] sm:w-[58vh] my-3 hover:cursor-pointer hover:scale-105 transition-transform duration-100 rounded-md">
+      <img id="btn-Geo" src="./svgs/Biologi.svg" class="object-fill max-h-[10vh] sm:w-[58vh] my-3 hover:cursor-pointer hover:scale-105 transition-transform duration-100 rounded-md">
+      <img id="btn-Sjrh" src="./svgs/Informatika.svg" class="object-fill max-h-[10vh] sm:w-[58vh] my-3 hover:cursor-pointer hover:scale-105 transition-transform duration-100 rounded-md">
+    </div>
+    <div id="cardContainer3" class="hidden items-center">
+      <img id="btn-Ind"src="./svgs/Kimia.svg" class="object-fill max-h-[10vh] sm:w-[58vh] my-3 hover:cursor-pointer hover:scale-105 transition-transform duration-100 rounded-md">
+      <img id="btn-ing" src="./svgs/Fisika.svg" class="object-fill max-h-[10vh] sm:w-[58vh] my-3 hover:cursor-pointer hover:scale-105 transition-transform duration-100 rounded-md">
+      <img id="btn-jpn" src="./svgs/Biologi.svg" class="object-fill max-h-[10vh] sm:w-[58vh] my-3 hover:cursor-pointer hover:scale-105 transition-transform duration-100 rounded-md">
+      <img id="btn-Bl" src="./svgs/Informatika.svg" class="object-fill max-h-[10vh] sm:w-[58vh] my-3 hover:cursor-pointer hover:scale-105 transition-transform duration-100 rounded-md">
+    </div>
+    <div id="cardContainer4" class="hidden items-center">
+      <img id="btn-MTK"src="./svgs/Kimia.svg" class="object-fill max-h-[10vh] sm:w-[58vh] my-3 hover:cursor-pointer hover:scale-105 transition-transform duration-100 rounded-md">
+      <img id="btn-PJOK" src="./svgs/Fisika.svg" class="object-fill max-h-[10vh] sm:w-[58vh] my-3 hover:cursor-pointer hover:scale-105 transition-transform duration-100 rounded-md">
+      <img id="btn-Tari" src="./svgs/Biologi.svg" class="object-fill max-h-[10vh] sm:w-[58vh] my-3 hover:cursor-pointer hover:scale-105 transition-transform duration-100 rounded-md">
+      <img id="btn-PPS" src="./svgs/Informatika.svg" class="object-fill max-h-[10vh] sm:w-[58vh] my-3 hover:cursor-pointer hover:scale-105 transition-transform duration-100 rounded-md">
+    </div>
+  </div>
+
+  <div id="ActionButton" class="flex">
+    <img id="prevbtn" src="./svgs/BtnBfr.svg" class="flex-col origin-bottom-left max-w-[40vh] max-h-[5vh] mx-auto mt-8 hover:cursor-pointer hover:scale-110 transition-transform duration-200">
+    <img id="nxtbtn" src="./svgs/BtnNext.svg" class="flex-col origin-bottom-right max-w-[40vh] max-h-[5vh] mx-auto mt-8 hover:cursor-pointer hover:scale-110 transition-transform duration-200">
+  </div>
+
+  <script>
+
+    const starsContainer = document.getElementById("stars");
+    const starCount = 200;
+
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement("div");
+      star.classList.add("star");
+
+
+      const size = Math.floor(Math.random() * 3) + 1;
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+
+
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+
+
+      star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+
+      starsContainer.appendChild(star);
+    }
+
+    const greetingElement = document.getElementById("greeting");
+    const hour = new Date().getHours();
+    let greeting = "Halo!";
+
+    if (hour >= 5 && hour < 11) {
+      greeting = "Selamat Pagi!";
+    } else if (hour >= 11 && hour < 15) {
+      greeting = "Selamat Siang!";
+    } else if (hour >= 15 && hour < 18) {
+      greeting = "Selamat Sore!";
+    } else {
+      greeting = "Selamat Malam!";
+    }
+
+    greetingElement.textContent = `${greeting} Adakah yang bisa saya bantu?`;
+
+    document.getElementById("logo").classList.add("fade-up");
+    greetingElement.classList.add("fade-up");
+
+
+    const card = document.getElementById("cardContainer");
+    card.classList.add("fade-up");
+    card.classList.remove("hidden");
+    card.classList.add("slide-up");
+
+    document.querySelectorAll(".btn-gradient").forEach(btn => {
+      const isMobile = window.innerWidth <= 768;
+      const starCount = isMobile ? 25 : 15; // mobile lebih ramai
+
+      for (let i = 0; i < starCount; i++) {
+        let star = document.createElement("span");
+        star.classList.add("btn-star");
+
+        // posisi acak
+        star.style.top = Math.random() * 100 + "%";
+        star.style.left = Math.random() * 100 + "%";
+
+        // ukuran pixel random
+        let size = Math.floor(Math.random() * 3) + 2; // 2px - 4px
+        star.style.width = size + "px";
+        star.style.height = size + "px";
+
+        // delay animasi acak
+        star.style.animationDelay = (Math.random() * 3) + "s";
+
+        btn.appendChild(star);
+      }
+    });
+     window.addEventListener("load", () => {
+    fetch("http://127.0.0.1:5500/ask", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        question: "init",
+        category: "init"
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log("API siap:", data);
+    })
+    .catch(err => console.error("Gagal konek API:", err));
+  });
+  </script>
+  <script src="./ButtonHandler.js"></script>
+</body>
+
+</html>
