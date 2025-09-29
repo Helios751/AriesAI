@@ -9,6 +9,9 @@ client = genai.Client(api_key="AIzaSyBsCPI710WmC5Fxq9UrPa_yMh159kam_2Y")
 app = Flask(__name__)
 CORS(app)
 
+@app.route("/", methods=["GET"])
+def home():
+    return "API is running"
 @app.route("/ask", methods=["POST"])
 def ask():
     data = request.get_json()
@@ -27,7 +30,7 @@ def ask():
         Tentukan apakah pertanyaan ini terkait dengan mata pelajaran "{category}".
         Jawab hanya dengan 'pembelajaran' atau 'luar'.
         Jawablah pertanyaan berikut menggunakan simbol matematika Unicode, 
-    bukan LaTeX.
+    bukan LaTeX. Jawab dengan menggunakan bahasa Indonesia.
         """
     )
 
@@ -49,4 +52,4 @@ def ask():
     })
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(host="0.0.0.0", debug=True, port=5000)

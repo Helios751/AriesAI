@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARIES UI</title>
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
+  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    * {
+      font-family: "Ubuntu", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .delay-1 {
+      animation-delay: 0.5s;
+    }
+
+    .delay-2 {
+      animation-delay: 1s;
+    }
+
+    .delay-3 {
+      animation-delay: 1.5s;
+    }
+
+    .delay-4 {
+      animation-delay: 2s;
+    }
+
+    .border-mnl {
+      border: white solid 2.75px;
+    }
+
+    @keyframes twinkle {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.3;
+      }
+    }
+
+    .star {
+      position: absolute;
+      background: indigo;
+      border-radius: 0;
+      animation: twinkle 135s infinite steps(2, jump-none);
+      image-rendering: pixelated;
+    }
+
+    /* Gradient custom */
+    .btn-gradient {
+      background: linear-gradient(to bottom, #1b0476, #1f4287, #5e29ab);
+      position: relative;
+      overflow: hidden;
+    }
+
+
+    @keyframes twinkle {
+
+      0%,
+      100% {
+        opacity: 0.2;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(0.6138);
+      }
+    }
+
+    /* Slide in/out animation */
+    .slide-in-right {
+      animation: slideInRight 0.5s ease forwards;
+    }
+
+    .slide-in-left {
+      animation: slideInLeft 0.5s ease forwards;
+    }
+
+    .slide-out-left {
+      animation: slideOutLeft 0.5s ease forwards;
+    }
+
+    .slide-out-right {
+      animation: slideOutRight 0.5s ease forwards;
+    }
+
+    @keyframes slideInRight {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideOutLeft {
+      from {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      to {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+    }
+
+    @keyframes slideOutRight {
+      from {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      to {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body
+  class="items-center justify-center min-h-screen bg-gradient-to-b from-black via-indigo-900 to-purple-700 bg-fixed">
+  <div id="stars"></div>
+  <div class="relative z-10 flex flex-col items-center justify-center min-h-screen py-[80px] px-4">
+    <div class="flex flex-col items-center text-center w-full max-w-[30rem] mx-auto">
+      <div id="logo" class="w-20 h-20 animate__animated animate__zoomIn">
+        <img src="./images/logo_ARIES.png" alt="Logo Aries" class="w-full h-full object-contain drop-shadow-lg">
+      </div>
+      <p id="greeting" class="text-white text-lg md:text-2xl font-medium animate-pulse">
+      </p>
+      <div id="cardContainer1" class="grid grid-cols-1 gap-4 mt-5">
+        <button id="btn-Kma"
+          class="rounded-lg border-2 border-mnl transition transform hover:scale-105 hover:shadow-lg">
+          <img src="./svgs/Kimia.svg" alt="Kimia" class="w-full max-h-[20vh] mx-auto rounded-lg">
+        </button>
+        <button id="btn-fis"
+          class="rounded-lg border-2 border-mnl transition transform hover:scale-105 hover:shadow-lg">
+          <img src="./svgs/Fisika.svg" alt="Fisika" class="w-full max-h-[20vh] mx-auto rounded-lg">
+        </button>
+        <button id="btn-Bio"
+          class="rounded-lg border-2 border-mnl transition transform hover:scale-105 hover:shadow-lg">
+          <img src="./svgs/Biologi.svg" alt="Biologi" class="w-full max-h-[20vh] mx-auto rounded-lg">
+        </button>
+        <button id="btn-Informatika"
+          class="rounded-lg border-2 border-mnl transition transform hover:scale-105 hover:shadow-lg">
+          <img src="./svgs/Informatika.svg" alt="Informatika" class="w-full max-h-[20vh] mx-auto rounded-lg">
+        </button>
+      </div>
+
+      <div id="cardContainer2" class="hidden grid grid-cols-1 gap-4 mt-5">
+        <button id="btn-Eko"
+          class="rounded-lg border-2 border-mnl transition transform hover:scale-105 hover:shadow-lg">
+          <img src="./svgs/Ekonomi.svg" alt="Ekonomi" class="w-full max-h-[20vh] mx-auto rounded-lg">
+        </button>
+        <button id="btn-Sos"
+          class="rounded-lg border-2 border-mnl transition transform hover:scale-105 hover:shadow-lg">
+          <img src="./svgs/sosiologi.svg" alt="Sosiologi" class="w-full max-h-[20vh] mx-auto rounded-lg">
+        </button>
+        <button id="btn-Geo"
+          class="rounded-lg border-2 border-mnl transition transform hover:scale-105 hover:shadow-lg">
+          <img src="./svgs/geografi.svg" alt="Geografi" class="w-full max-h-[20vh] mx-auto rounded-lg">
+        </button>
+        <button id="btn-Sjrh"
+          class="rounded-lg border-2 border-mnl transition transform hover:scale-105 hover:shadow-lg">
+          <img src="./svgs/Sejarah.svg" alt="Sejarah" class="w-full max-h-[20vh] mx-auto rounded-lg">
+        </button>
+      </div>
+
+      <div id="cardContainer3" class="hidden grid grid-cols-1 gap-4 mt-5">
+        <button id="btn-Ind"
+          class="rounded-lg border-2 border-mnl transition transform hover:scale-105 hover:shadow-lg">
+          <img src="./svgs/bahas_indo.svg" alt="Indonesia" class="w-full max-h-[20vh] mx-auto rounded-lg">
+        </button>
+        <button id="btn-ing"
+          class="rounded-lg border-2 border-mnl transition transform hover:scale-105 hover:shadow-lg">
+          <img src="./svgs/bahas_inggris.svg" alt="Inggris" class="w-full max-h-[20vh] mx-auto rounded-lg">
+        </button>
+        <button id="btn-jpn"
+          class="rounded-lg border-2 border-mnl transition transform hover:scale-105 hover:shadow-lg">
+          <img src="./svgs/bahasa_Jepang.svg" alt="Jepang" class="w-full max-h-[20vh] mx-auto rounded-lg">
+        </button>
+        <button id="btn-Bl" class="rounded-lg border-2 border-mnl transition transform hover:scale-105 hover:shadow-lg">
+          <img src="./svgs/bahas_Bali.svg" alt="Bali" class="w-full max-h-[20vh] mx-auto rounded-lg">
+        </button>
+      </div>
+
+      <div id="cardContainer4" class="hidden grid grid-cols-1 gap-4 mt-5">
+        <button id="btn-MTK"
+          class="rounded-lg border-2 border-mnl transition transform hover:scale-105 hover:shadow-lg">
+          <img src="./svgs/Matematika.svg" alt="Matematika" class="w-full max-h-[20vh] mx-auto rounded-lg">
+        </button>
+        <button id="btn-PJOK"
+          class="rounded-lg border-2 border-mnl transition transform hover:scale-105 hover:shadow-lg">
+          <img src="./svgs/PJOK.svg" alt="PJOK" class="w-full max-h-[20vh] mx-auto rounded-lg">
+        </button>
+        <button id="btn-Tari"
+          class="rounded-lg border-2 border-mnl transition transform hover:scale-105 hover:shadow-lg">
+          <img src="./svgs/Seni_Tari.svg" alt="Tari" class="w-full max-h-[20vh] mx-auto rounded-lg">
+        </button>
+        <button id="btn-PPS"
+          class="rounded-lg border-2 border-mnl transition transform hover:scale-105 hover:shadow-lg">
+          <img src="./svgs/Pendidikan_Pancasila.svg" alt="PPS" class="w-full max-h-[20vh] mx-auto rounded-lg">
+        </button>
+      </div>
+      <div id="ActionButton" class="flex flex-row justify-between w-full mt-6">
+        <img id="btnBfr" src="./svgs/BtnBfr.svg" class="max-w-[100px] w-1/3 sm:w-1/4 md:w-1/6 hover:cursor-pointer">
+        <img id="btnNext" src="./svgs/BtnNext.svg" class="max-w-[100px] w-1/3 sm:w-1/4 md:w-1/6 hover:cursor-pointer">
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    const starsContainer = document.getElementById("stars");
+    const starCount = 200;
+
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement("div");
+      star.classList.add("star");
+
+
+      const size = Math.floor(Math.random() * 3) + 1;
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+
+
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+
+
+      star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+
+      starsContainer.appendChild(star);
+    }
+
+    const greetingElement = document.getElementById("greeting");
+    const hour = new Date().getHours();
+    let greeting = "Halo!";
+
+    if (hour >= 5 && hour < 11) {
+      greeting = "Selamat Pagi!";
+    } else if (hour >= 11 && hour < 15) {
+      greeting = "Selamat Siang!";
+    } else if (hour >= 15 && hour < 18) {
+      greeting = "Selamat Sore!";
+    } else {
+      greeting = "Selamat Malam!";
+    }
+
+    greetingElement.textContent = `${greeting} Adakah yang bisa saya bantu?`;
+
+    document.getElementById("logo").classList.add("fade-up");
+    greetingElement.classList.add("fade-up");
+
+
+    // const card = document.getElementById("cardContainer");
+    // card.classList.add("fade-up");
+    // card.classList.remove("hidden");
+    // card.classList.add("slide-up");
+
+    document.querySelectorAll(".btn-gradient").forEach(btn => {
+      const isMobile = window.innerWidth <= 768;
+      const starCount = isMobile ? 25 : 15; // mobile lebih ramai
+
+      for (let i = 0; i < starCount; i++) {
+        let star = document.createElement("span");
+        star.classList.add("btn-star");
+
+        // posisi acak
+        star.style.top = Math.random() * 100 + "%";
+        star.style.left = Math.random() * 100 + "%";
+
+        // ukuran pixel random
+        let size = Math.floor(Math.random() * 3) + 2; // 2px - 4px
+        star.style.width = size + "px";
+        star.style.height = size + "px";
+
+        // delay animasi acak
+        star.style.animationDelay = (Math.random() * 3) + "s";
+
+        btn.appendChild(star);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const containers = [
+        document.getElementById("cardContainer1"),
+        document.getElementById("cardContainer2"),
+        document.getElementById("cardContainer3"),
+        document.getElementById("cardContainer4")
+      ];
+      const btnNext = document.getElementById("btnNext");
+      const btnBfr = document.getElementById("btnBfr");
+
+      let currentIndex = 0;
+      function updateView(newIndex, direction) {
+        if (newIndex < 0 || newIndex >= containers.length) return;
+
+        const current = containers[currentIndex];
+        const next = containers[newIndex];
+        current.classList.add(direction === "next" ? "slide-out-left" : "slide-out-right");
+
+        setTimeout(() => {
+          current.classList.add("hidden");
+          current.classList.remove("slide-out-left", "slide-out-right");
+          next.classList.remove("hidden");
+          next.classList.add(direction === "next" ? "slide-in-right" : "slide-in-left");
+
+          setTimeout(() => {
+            next.classList.remove("slide-in-right", "slide-in-left");
+          }, 500);
+        }, 500);
+
+        currentIndex = newIndex;
+        if (currentIndex === 0) {
+          btnBfr.classList.remove("hover:cursor-pointer");
+          btnBfr.classList.add("hover:cursor-default", "opacity-[0.3]");
+        } else {
+          btnBfr.classList.add("hover:cursor-pointer");
+          btnBfr.classList.remove("hover:cursor-default", "opacity-[0.3]");
+        }
+        if (currentIndex === containers.length - 1) {
+          btnNext.classList.remove("hover:cursor-pointer");
+          btnNext.classList.add("hover:cursor-default", "opacity-[0.3]");
+        } else {
+          btnNext.classList.add("hover:cursor-pointer");
+          btnNext.classList.remove("hover:cursor-default", "opacity-[0.3]");
+        }
+        // btnBfr.style.display = currentIndex === 0 ? "none" : "block";
+        // btnNext.style.display = currentIndex === containers.length - 1 ? "none" : "block";
+      }
+      btnNext.addEventListener("click", () => updateView(currentIndex + 1, "next"));
+      btnBfr.addEventListener("click", () => updateView(currentIndex - 1, "back"));
+      containers.forEach((c, i) => {
+        if (i !== 0) c.classList.add("hidden");
+      });
+      // btnBfr.style.display = "none";
+      btnBfr.classList.remove("hover:cursor-pointer");
+      btnBfr.classList.add("hover:cursor-default", "opacity-[0.3]");
+    });
+
+    window.addEventListener("load", () => {
+      fetch("https://aries-ai.duckdns.org/ask", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          question: "init",
+          category: "init"
+        })
+      })
+        .then(res => res.json())
+        .then(data => {
+          console.log("API siap:", data);
+        })
+        .catch(err => console.error("Gagal konek API:", err));
+    });
+  </script>
+  <script src="./ButtonHandler.js"></script>
+</body>
+
+</html>
