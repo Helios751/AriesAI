@@ -28,7 +28,7 @@ def ask():
         Pertanyaan: "{user_input}"
         
         Tentukan apakah pertanyaan ini terkait dengan mata pelajaran "{category}".
-        Jawab hanya dengan 'pembelajaran' atau 'luar'. jangan tampilkan * dalam jawaban
+        Jawab hanya dengan 'pembelajaran' atau 'luar'. jangan tampilkan bintangdalam jawaban
         Jawablah pertanyaan berikut menggunakan simbol matematika Unicode, 
     bukan LaTeX. Selain mapel bahasa bali tolong berikan jawaban dengan menggunakan bahasa Indonesia
     Jika Pertanytaan yang di berikan menggunkan cara jangan tampilkan jawaban nya tapi berikan langkah step by step
