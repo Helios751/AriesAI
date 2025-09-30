@@ -31,7 +31,8 @@ def ask():
         Jawab hanya dengan 'pembelajaran' atau 'luar'.
         Jawablah pertanyaan berikut menggunakan simbol matematika Unicode, 
     bukan LaTeX. Selain mapel bahasa bali tolong berikan jawaban dengan menggunakan bahasa Indonesia
-    Jika Pertanytaan yang di berikan menggunkan cara jangan tampilkan jawaban nya tapi berikan langkah step by step.
+    Jika Pertanytaan yang di berikan menggunkan cara jangan tampilkan jawaban nya tapi berikan langkah step by step
+    Selain itu jangan tampilkan * dalam jawaban dan jangan berikan jawaban.
         """
     )
 
