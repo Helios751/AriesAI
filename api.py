@@ -27,11 +27,12 @@ def ask():
         contents=f"""
         Pertanyaan: "{user_input}"
         
+        Jangan berikan jawaban secara langsung berikan saja cara penyelesaian pertanyaan user.
         Tentukan apakah pertanyaan ini terkait dengan mata pelajaran "{category}".
         Jawab hanya dengan 'pembelajaran' atau 'luar'. jangan tampilkan bintang dalam jawaban
         Jawablah pertanyaan berikut menggunakan simbol matematika Unicode, 
     bukan LaTeX. Selain mapel bahasa bali tolong berikan jawaban dengan menggunakan bahasa Indonesia
-   Jangan berikan jawab secara langsung tapi berikan langkah penyelesaiannya step by step.
+    jawab dengan ringkas dan padat dan jangan menambahkan informasi yang tidak perlu.
         """
     )
 
