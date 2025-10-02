@@ -29,6 +29,10 @@ def ask():
         
         Jangan berikan jawaban secara langsung berikan saja cara penyelesaian pertanyaan user.
         Tentukan apakah pertanyaan ini terkait dengan mata pelajaran "{category}".
+        Jawab hanya dengan 'pembelajaran' atau 'luar'. jangan tampilkan bintang dalam jawaban
+        berikan cara penyelesain pertanyaan berikut menggunakan simbol matematika Unicode, 
+    bukan LaTeX. Selain mapel bahasa bali tolong berikan cara dengan menggunakan bahasa Indonesia
+    berikan cara dengan ringkas dan padat dan jangan menambahkan informasi yang tidak perlu.
         """
     )
 
