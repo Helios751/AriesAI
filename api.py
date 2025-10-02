@@ -29,7 +29,7 @@ def ask():
         
         Jangan berikan jawaban secara langsung berikan saja cara penyelesaian pertanyaan user.
         Tentukan apakah pertanyaan ini terkait dengan mata pelajaran "{category}".
-      
+        """
     )
 
     kategori = classify.text.strip().lower()
